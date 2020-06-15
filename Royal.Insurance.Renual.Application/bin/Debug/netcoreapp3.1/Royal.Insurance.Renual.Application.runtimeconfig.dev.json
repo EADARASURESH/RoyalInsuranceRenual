@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\EdaraVM\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\EdaraVM\\.nuget\\packages"
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.DTO\bin\Debug\netstandard2.0\Royal.Insurance.Renual.DTO.deps.json
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.DTO\bin\Debug\netstandard2.0\Royal.Insurance.Renual.DTO.dll
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.DTO\bin\Debug\netstandard2.0\Royal.Insurance.Renual.DTO.pdb
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.DTO\obj\Debug\netstandard2.0\Royal.Insurance.Renual.DTO.csprojAssemblyReference.cache
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.DTO\obj\Debug\netstandard2.0\Royal.Insurance.Renual.DTO.AssemblyInfoInputs.cache
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.DTO\obj\Debug\netstandard2.0\Royal.Insurance.Renual.DTO.AssemblyInfo.cs
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.DTO\obj\Debug\netstandard2.0\Royal.Insurance.Renual.DTO.dll
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.DTO\obj\Debug\netstandard2.0\Royal.Insurance.Renual.DTO.pdb
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.DTO\obj\Debug\netstandard2.0\Royal.Insurance.Renual.DTO.csproj.CoreCompileInputs.cache

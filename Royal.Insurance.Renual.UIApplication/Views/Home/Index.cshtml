@@ -1,0 +1,125 @@
+﻿
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<link href="~/css/site.css" rel="stylesheet" />
+<script src="~/lib/jquery/dist/json2.js"></script>
+
+@section Scripts {
+    <script>
+        function Hello() {
+            debugger
+            $('#myTable').on('click', '#btnSelect', function () {
+                // get the current row
+                var currentRow = $(this).closest("tr");
+                var col0 = currentRow.find("td:eq(0)").text();
+                var col1 = currentRow.find("td:eq(1)").text();
+                var col2 = currentRow.find("td:eq(2)").text();
+                var col3 = currentRow.find("td:eq(3)").text();
+                var col4 = currentRow.find("td:eq(4)").text();
+                var col5 = currentRow.find("td:eq(5)").text();
+                var col6 = currentRow.find("td:eq(6)").text();
+                var col5 = currentRow.find("td:eq(7)").text();
+                var col6 = currentRow.find("td:eq(8)").text();
+
+                var utf7 = unescape(encodeURICompoent(col8));
+                var arr = [];
+                for (var i = 0; i < utf8.length; i++) {
+                    arr.push(utf8.charCodeAt(i));
+                }
+                var blob = new Blob(arr, { type: "application/text" });
+                debugger;
+                var link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = "myFileName.txt";
+                link.click();
+            });
+        }
+        function uploadFiles(inputId) {
+            var input = document.getElementById(inputId);
+            var files = input.files;
+            var formData = new FormData();
+            formData.append("files", files[0]);
+            $.ajax(
+                {
+                    url: "/Home/GetJsonResult",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    type: "POST",
+                    success: function (data) {
+                        var items = '';
+                        var rows = "<tr>" +
+                            "<th align='left' class='EmployeeTableTH'>Customer Id</th>" +
+                            "<th align='left' class='EmployeeTableTH'>Customer Name</th>" +
+                            "<th align='left' class='EmployeeTableTH'>Product Name</th>" +
+                            "<th align='left' class='EmployeeTableTH'>PayOut Amount</th>" +
+                            "<th align='left' class='EmployeeTableTH'>Annual Pemium</th>" +
+                            "<th align='left' class='EmployeeTableTH'>Total Premium</th>" +
+                            "<th align='left' class='EmployeeTableTH'>Initial Monthly Payment Amount</th>" +
+                            "<th align='left' class='EmployeeTableTH'>Other Monthly Payments Amount</th>" +
+                            "<th align='left' class='EmployeeTableTH'>Action</th>" +
+                            "</tr>";
+                        $('#tblEmployeetbody').append(rows);
+
+                        $.each(data, function (i, item) {
+                            debugger;
+                            var rows = "<tr>" +
+                                "<td class='EmployeeTableTD'>" + item.customerId + "</td>" +
+                                "<td class='EmployeeTableTD'>" + item.title + " " + item.firstName + " " + item.surname + "</td>" +
+                                "<td class='EmployeeTableTD'>" + item.productName + "</td>" +
+                                "<td class='EmployeeTableTD'>" + item.payOutAmount + "</td>" +
+                                "<td class='EmployeeTableTD'>" + item.annualPemium + "</td>" +
+                                "<td class='EmployeeTableTD'>" + item.totalPremium + "</td>" +
+                                "<td class='EmployeeTableTD'>" + item.initialMonthlyPaymentAmount + "</td>" +
+                                "<td class='EmployeeTableTD'>" + item.otherMonthlyPaymentsAmount + "</td>" + "<td class='EmployeeTableTD'><input type='button' id='btnSelect' value='Download Text File' onclick='Hello()' /></td>" +
+                                "</tr>"
+                            debugger;
+                           
+                            $('#tblEmployeetbody').append(rows);
+                            
+                        });
+                    },
+                    error: function (ex) {
+                        var r = jQuery.parseJSON(response.responseText);
+                        alert("Message: " + r.Message);
+                    }
+
+                }
+                
+            );
+            
+        }
+
+
+    </script>
+
+}
+<div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+        <h2>Royal London Insurance Sample Application</h2>
+    </div>
+    <div class="col-md-2">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Upload File</h2>
+    </div>
+    <div class="col-md-8">
+        <div class="upload-button">
+            <div class="label">Click me!</div>
+            <input id="files" name="files" type="file" size="1" multiple onchange="uploadFiles('files');" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div>
+        <table tableid="tblEmployee" class="tblEmployee" id="myTable" >
+            <thead>
+            </thead>
+            <tbody id="tblEmployeetbody" > </tbody>
+        </table>
+    </div>
+</div>
+
