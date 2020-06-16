@@ -19,6 +19,10 @@ namespace RoyalLondon.Insurance.Application.Service
     {
         public List<OutPutDTO> CustomerInsuranceGetAsync(InputData file)
         {
+            if(file.CsvFile==null)
+            {
+                throw new ArgumentNullException();
+            }
             var stream = new MemoryStream(file.CsvFile);
             IFormFile files = new FormFile(stream, 0, 100000000, "name", "fileName");
             List<InputDTO> inputDTOs = null;

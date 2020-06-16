@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Royal.Insurance.Renual.DTO;
 using RoyalLondon.Insurance.Application.Service;
@@ -22,8 +15,12 @@ namespace Royal.Insurance.Renual.Application.Controllers
             _renualService = renualService;
         }
         [HttpPost]
-        public  List<OutPutDTO> RenualTextFiles(InputData stream)
+        public IActionResult RenualTextFiles(InputData stream)
         {
+            if (stream.CsvFile==null)
+            {
+                return BadRequest();
+            }
             var outPutResult = new List<OutPutDTO>();
             try
             {
@@ -32,19 +29,8 @@ namespace Royal.Insurance.Renual.Application.Controllers
             catch (Exception ex)
             {
             }
-            return outPutResult;
+            return Ok(outPutResult);
         }
-        [HttpPost]
-        [Route("GenerateFile")]
-        public HttpResponseMessage Get(InputData inputData)
-        {
-            var content = _renualService.GetStream(inputData);            
-            var ids = new List<int>() { 1, 2 };
-            var objectContent = new ObjectContent<List<int>>(ids, new System.Net.Http.Formatting.JsonMediaTypeFormatter());
-            content.Add(objectContent);
-            var response = new HttpResponseMessage();
-            response.Content = content;
-            return response;
-        }
+      
     }
 }
