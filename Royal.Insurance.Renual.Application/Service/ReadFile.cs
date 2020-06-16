@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-
 namespace RoyalLondon.Insurance.Application.Service
 {
     public class ReadFile
@@ -19,16 +18,12 @@ namespace RoyalLondon.Insurance.Application.Service
             {
                 if (file.Length > 0)
                 {
-
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
-
                         await file.CopyToAsync(stream);
                     }
                 }
             }
-
-          
             return filePath;
         }
     }

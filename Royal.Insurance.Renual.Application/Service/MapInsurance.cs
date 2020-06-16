@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 namespace Royal.Insurance.Renual.Application.Service
 {
     public sealed class MapObject : ClassMap<InputDTO>
@@ -18,7 +17,6 @@ namespace Royal.Insurance.Renual.Application.Service
             Map(m => m.PayOutAmount).Name("PayoutAmount");
             Map(m => m.ProductName).Name("ProductName");
             Map(m => m.Surname).Name("Surname");
-           
         }
     }
 }

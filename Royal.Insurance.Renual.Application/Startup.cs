@@ -12,7 +12,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using RoyalLondon.Insurance.Application.Service;
-
 namespace Royal.Insurance.Renual.Application
 {
     public class Startup
@@ -21,9 +20,7 @@ namespace Royal.Insurance.Renual.Application
         {
             Configuration = configuration;
         }
-
         public IConfiguration Configuration { get; }
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -34,7 +31,6 @@ namespace Royal.Insurance.Renual.Application
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
         }
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -42,13 +38,9 @@ namespace Royal.Insurance.Renual.Application
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseHttpsRedirection();
-
             app.UseRouting();
             app.UseSwagger();
-            
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

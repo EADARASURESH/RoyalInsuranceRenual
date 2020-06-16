@@ -1,25 +1,14 @@
 ﻿The current date
-
 FAO: customer’s full name including Title
-
 RE: Your Renewal
-
 Dear customer’s Title followed by Surname
-
 We hereby invite you to renew your Insurance Policy, subject to the following terms.
-
 Your chosen insurance product is Product Name.
-
 The amount payable to you in the event of a valid claim will be £Payout Amount.
-
 Your annual premium will be £Annual Premium.
-
 If you choose to pay by Direct Debit, we will add a credit charge of £Credit Charge, bringing the total to £Annual Premium plus Credit Charge.
 This is payable by an initial payment of £Initial Monthly Payment Amount,
 followed by 11 payments of £Other Monthly Payments Amount each.
-
 Please get in touch with us to arrange your renewal by visiting https://www.regallutoncodingtest.co.uk/renew or calling us on 01625 123456.
-
 Kind Regards
-
 Regal Luton

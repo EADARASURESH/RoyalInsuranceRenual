@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Royal.Insurance.Renual.DTO;
 using RoyalLondon.Insurance.Application.Service;
-
 namespace Royal.Insurance.Renual.Application.Controllers
 {
     [Route("api/[controller]")]
@@ -29,11 +28,9 @@ namespace Royal.Insurance.Renual.Application.Controllers
             try
             {
                 outPutResult =  _renualService.CustomerInsuranceGetAsync(stream);
-                
             }
             catch (Exception ex)
             {
-
             }
             return outPutResult;
         }
@@ -49,6 +46,5 @@ namespace Royal.Insurance.Renual.Application.Controllers
             response.Content = content;
             return response;
         }
-       
     }
 }

@@ -17,10 +17,18 @@
                 var col4 = currentRow.find("td:eq(4)").text();
                 var col5 = currentRow.find("td:eq(5)").text();
                 var col6 = currentRow.find("td:eq(6)").text();
-                var col5 = currentRow.find("td:eq(7)").text();
-                var col6 = currentRow.find("td:eq(8)").text();
+                var col7 = currentRow.find("td:eq(7)").text();
+                var col8 = currentRow.find("td:eq(8)").text();
 
-                var utf7 = unescape(encodeURICompoent(col8));
+
+
+                $.post("@Url.Action("GetStream")", values, function (data) {    // do stuff;
+
+
+                });
+
+
+                var utf7 = unescape(encodeURICompoent(col6));
                 var arr = [];
                 for (var i = 0; i < utf8.length; i++) {
                     arr.push(utf8.charCodeAt(i));
@@ -46,36 +54,19 @@
                     contentType: false,
                     type: "POST",
                     success: function (data) {
-                        var items = '';
-                        var rows = "<tr>" +
-                            "<th align='left' class='EmployeeTableTH'>Customer Id</th>" +
-                            "<th align='left' class='EmployeeTableTH'>Customer Name</th>" +
-                            "<th align='left' class='EmployeeTableTH'>Product Name</th>" +
-                            "<th align='left' class='EmployeeTableTH'>PayOut Amount</th>" +
-                            "<th align='left' class='EmployeeTableTH'>Annual Pemium</th>" +
-                            "<th align='left' class='EmployeeTableTH'>Total Premium</th>" +
-                            "<th align='left' class='EmployeeTableTH'>Initial Monthly Payment Amount</th>" +
-                            "<th align='left' class='EmployeeTableTH'>Other Monthly Payments Amount</th>" +
-                            "<th align='left' class='EmployeeTableTH'>Action</th>" +
-                            "</tr>";
-                        $('#tblEmployeetbody').append(rows);
-
                         $.each(data, function (i, item) {
                             debugger;
-                            var rows = "<tr>" +
-                                "<td class='EmployeeTableTD'>" + item.customerId + "</td>" +
-                                "<td class='EmployeeTableTD'>" + item.title + " " + item.firstName + " " + item.surname + "</td>" +
-                                "<td class='EmployeeTableTD'>" + item.productName + "</td>" +
-                                "<td class='EmployeeTableTD'>" + item.payOutAmount + "</td>" +
-                                "<td class='EmployeeTableTD'>" + item.annualPemium + "</td>" +
-                                "<td class='EmployeeTableTD'>" + item.totalPremium + "</td>" +
-                                "<td class='EmployeeTableTD'>" + item.initialMonthlyPaymentAmount + "</td>" +
-                                "<td class='EmployeeTableTD'>" + item.otherMonthlyPaymentsAmount + "</td>" + "<td class='EmployeeTableTD'><input type='button' id='btnSelect' value='Download Text File' onclick='Hello()' /></td>" +
-                                "</tr>"
-                            debugger;
-                           
-                            $('#tblEmployeetbody').append(rows);
-                            
+                            const byteCharacters = atob(item.textFile);
+                            const byteNumbers = new Array(byteCharacters.length);
+                            for (let i = 0; i < byteCharacters.length; i++) {
+                                byteNumbers[i] = byteCharacters.charCodeAt(i);
+                            }
+                            const byteArray = new Uint8Array(byteNumbers);
+                            var blob = new Blob([byteArray], { type: "application/txt" });// change resultByte to bytes
+                            var link = document.createElement("a");
+                            link.href = window.URL.createObjectURL(blob);
+                            link.download = item.fileName+".txt";
+                            link.click();
                         });
                     },
                     error: function (ex) {
@@ -84,12 +75,11 @@
                     }
 
                 }
-                
+
             );
-            
+
         }
-
-
+      
     </script>
 
 }
