@@ -28,10 +28,6 @@ Here actual file convert into byte[] and will send to "Royal.Insurance.Renual.Ap
 HTTP Client 
 
 
-
-
-functionalitys implemented
-----------------------------
 Serice Layes(Royal.Insurance.Renual.Application(WebAPi APPlication) 
 
 1.Design Patterns
@@ -49,3 +45,4 @@ Unit Test Cases
 
 created unit test cases for calculating premium in different scenarios.
 
+Royal.Insurance.Renual.Application(WebAPi APPlication)
