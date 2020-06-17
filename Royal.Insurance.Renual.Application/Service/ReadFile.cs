@@ -6,9 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 namespace RoyalLondon.Insurance.Application.Service
 {
-    public class ReadFile
+    public static class ReadFile
     {
-        public async Task<string> GetFileName(IFormFile file)
+        public async static Task<string> GetFileName(IFormFile file)
         {
             Random random = new Random(10000);
             // full path to file in temp lo;cation

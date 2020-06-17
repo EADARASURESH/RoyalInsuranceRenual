@@ -5,7 +5,6 @@ using Royal.Insurance.Renual.DTO;
 using RoyalLondon.Insurance.Application.Service;
 using System;
 using System.Collections.Generic;
-
 namespace Royal.Insura.Renual.Test
 {
     public class InsuranceRenualTest
