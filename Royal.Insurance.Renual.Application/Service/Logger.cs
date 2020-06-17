@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Royal.Insurance.Renual.Application.Service
 {
     public sealed class Logger
     {
-        private static Logger instance = null;
+        private static Logger _instance;
         public static Logger GetInstance
         {
             get
             {
-                if (instance == null)
-                    instance = new Logger();
-                return instance;
+                if (_instance == null)
+                    _instance = new Logger();
+                return _instance;
             }
         }
         private Logger()
         {
-           
+
         }
         public static void InsertLogs(Exception ex)
         {

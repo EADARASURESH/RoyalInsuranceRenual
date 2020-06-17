@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Royal.Insurance.Renual.UIAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Royal.Insurance.Renual.Application", "Royal.Insurance.Renual.Application\Royal.Insurance.Renual.Application.csproj", "{509FFF2D-512D-4608-851A-4253A5C47FB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Royal.Insura.Renual.Test", "Royal.Insura.Renual.Test\Royal.Insura.Renual.Test.csproj", "{4193B505-A919-4F48-97BF-FCFAB700168C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Royal.Insurance.Renual.Test", "Royal.Insura.Renual.Test\Royal.Insurance.Renual.Test.csproj", "{4193B505-A919-4F48-97BF-FCFAB700168C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

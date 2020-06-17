@@ -1,5 +1,3 @@
-using System;
-
 namespace Royal.Insurance.Renual.UIApplication.Models
 {
     public class ErrorViewModel

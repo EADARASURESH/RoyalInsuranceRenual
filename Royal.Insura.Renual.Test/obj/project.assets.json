@@ -5272,9 +5272,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insura.Renual.Test\\Royal.Insura.Renual.Test.csproj",
-      "projectName": "Royal.Insura.Renual.Test",
-      "projectPath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insura.Renual.Test\\Royal.Insura.Renual.Test.csproj",
+      "projectUniqueName": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insura.Renual.Test\\Royal.Insurance.Renual.Test.csproj",
+      "projectName": "Royal.Insurance.Renual.Test",
+      "projectPath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insura.Renual.Test\\Royal.Insurance.Renual.Test.csproj",
       "packagesPath": "C:\\Users\\EdaraVM\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insura.Renual.Test\\obj\\",
       "projectStyle": "PackageReference",

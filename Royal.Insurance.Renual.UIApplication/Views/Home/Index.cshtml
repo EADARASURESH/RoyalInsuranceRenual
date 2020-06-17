@@ -5,42 +5,6 @@
 
 @section Scripts {
     <script>
-        function Hello() {
-            debugger
-            $('#myTable').on('click', '#btnSelect', function () {
-                // get the current row
-                var currentRow = $(this).closest("tr");
-                var col0 = currentRow.find("td:eq(0)").text();
-                var col1 = currentRow.find("td:eq(1)").text();
-                var col2 = currentRow.find("td:eq(2)").text();
-                var col3 = currentRow.find("td:eq(3)").text();
-                var col4 = currentRow.find("td:eq(4)").text();
-                var col5 = currentRow.find("td:eq(5)").text();
-                var col6 = currentRow.find("td:eq(6)").text();
-                var col7 = currentRow.find("td:eq(7)").text();
-                var col8 = currentRow.find("td:eq(8)").text();
-
-
-
-                $.post("@Url.Action("GetStream")", values, function (data) {    // do stuff;
-
-
-                });
-
-
-                var utf7 = unescape(encodeURICompoent(col6));
-                var arr = [];
-                for (var i = 0; i < utf8.length; i++) {
-                    arr.push(utf8.charCodeAt(i));
-                }
-                var blob = new Blob(arr, { type: "application/text" });
-                debugger;
-                var link = document.createElement('a');
-                link.href = window.URL.createObjectURL(blob);
-                link.download = "myFileName.txt";
-                link.click();
-            });
-        }
         function uploadFiles(inputId) {
             var input = document.getElementById(inputId);
             var files = input.files;

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Controllers\HomeController.cs~RF8db3f38.TMP" />
+  </ItemGroup>
+	
+  <ItemGroup>
     <PackageReference Include="jQuery.jqGrid" Version="4.4.4" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />

@@ -1,14 +1,12 @@
 ﻿using Royal.Insurance.Renual.DTO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Royal.Insurance.Renual.Application.Service
 {
-    public  class PremiumCalculation
+    public class PremiumCalculationService : IPremiumCalculation
     {
-        public  List<OutPutDTO> PremiumCalculationAmount(List<InputDTO> inputDTOs)
+        public List<OutPutDTO> PremiumCalculationAmount(List<InputDTO> inputDTOs)
         {
             var outPutDTOs = new List<OutPutDTO>();
             foreach (var inputDto in inputDTOs)
@@ -32,6 +30,7 @@ namespace Royal.Insurance.Renual.Application.Service
                 outPutDTOs.Add(outPutDTO);
             }
             return outPutDTOs;
+
         }
     }
 }

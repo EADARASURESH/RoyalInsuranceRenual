@@ -18,5 +18,6 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_Extensions_ApiDescription_Server Condition=" '$(PkgMicrosoft_Extensions_ApiDescription_Server)' == '' ">C:\Users\EdaraVM\.nuget\packages\microsoft.extensions.apidescription.server\3.0.0</PkgMicrosoft_Extensions_ApiDescription_Server>
+    <PkgJetBrains_ReSharper_CommandLineTools Condition=" '$(PkgJetBrains_ReSharper_CommandLineTools)' == '' ">C:\Users\EdaraVM\.nuget\packages\jetbrains.resharper.commandlinetools\2020.2.0-eap02</PkgJetBrains_ReSharper_CommandLineTools>
   </PropertyGroup>
 </Project>

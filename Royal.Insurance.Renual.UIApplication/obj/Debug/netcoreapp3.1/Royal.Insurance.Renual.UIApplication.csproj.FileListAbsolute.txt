@@ -20,8 +20,6 @@ C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplicati
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\bin\Debug\netcoreapp3.1\Royal.Insurance.Renual.DTO.pdb
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.AssemblyInfoInputs.cache
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.AssemblyInfo.cs
-C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.csproj.CoreCompileInputs.cache
-C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.RazorAssemblyInfo.cache
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.RazorAssemblyInfo.cs
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.TagHelpers.input.cache
@@ -44,3 +42,5 @@ C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplicati
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.pdb
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.genruntimeconfig.cache
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.csprojAssemblyReference.cache
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.csproj.CoreCompileInputs.cache
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.MvcApplicationPartsAssemblyInfo.cache

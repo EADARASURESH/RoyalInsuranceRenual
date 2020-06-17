@@ -1,27 +1,24 @@
-﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
-namespace RoyalLondon.Insurance.Application.Service
+using Microsoft.AspNetCore.Http;
+
+namespace Royal.Insurance.Renual.Application.Service
 {
     public static class ReadFile
     {
-        public async static Task<string> GetFileName(IFormFile file)
+        public static async Task<string> GetFileName(IFormFile file)
         {
             Random random = new Random(10000);
             // full path to file in temp lo;cation
             //we are using Temp file name just for the example. Add your own file path.
-            var filePath = Path.GetTempPath() + random.Next(0,1000).ToString() + ".csv";
-            using (var fileStram = file.OpenReadStream())
+            var filePath = Path.GetTempPath() + random.Next(0, 1000).ToString() + ".csv";
+            await using (file.OpenReadStream())
             {
                 if (file.Length > 0)
                 {
-                    using (var stream = new FileStream(filePath, FileMode.Create))
-                    {
-                        await file.CopyToAsync(stream);
-                    }
+                    await using var stream = new FileStream(filePath, FileMode.Create);
+                    await file.CopyToAsync(stream);
                 }
             }
             return filePath;

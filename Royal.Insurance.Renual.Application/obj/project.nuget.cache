@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "RuOtf5Vt4JgwPBaAMFw2dOajUeWT8zo7tDpdkXC7PFADo3XPKjk7qyXFlmWtYApSMrVtN2KxR2oqGnd22KcmFw==",
+  "dgSpecHash": "fXGL5+bBdRaN0SxFrURwkYNz/wA4NNrdEt69bpTwGGIYgvx64VEYaTzYBLPZcXlIW3pFMeGE17xcb+ktbC0T1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renual.Application\\Royal.Insurance.Renual.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EdaraVM\\.nuget\\packages\\csvhelper\\15.0.5\\csvhelper.15.0.5.nupkg.sha512",
+    "C:\\Users\\EdaraVM\\.nuget\\packages\\jetbrains.resharper.commandlinetools\\2020.2.0-eap02\\jetbrains.resharper.commandlinetools.2020.2.0-eap02.nupkg.sha512",
     "C:\\Users\\EdaraVM\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\EdaraVM\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.5\\microsoft.aspnetcore.http.features.3.1.5.nupkg.sha512",
     "C:\\Users\\EdaraVM\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
