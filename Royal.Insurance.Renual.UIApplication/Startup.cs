@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Royal.Insurance.Renual.UIApplication.Models;
 
 namespace Royal.Insurance.Renual.UIApplication
 {
@@ -19,6 +20,7 @@ namespace Royal.Insurance.Renual.UIApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSingleton<IGetText, GetTextService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

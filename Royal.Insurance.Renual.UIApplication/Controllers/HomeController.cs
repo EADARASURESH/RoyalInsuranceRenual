@@ -10,22 +10,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 namespace Royal.Insurance.Renual.UIApplication.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-#pragma warning disable 618
-        private readonly IHostingEnvironment _hostingEnvironment;
-#pragma warning restore 618
-      
-#pragma warning disable 618
-        public HomeController(ILogger<HomeController> logger, IHostingEnvironment hostingEnvironment)
-#pragma warning restore 618
+        private readonly IGetText _iGetTextService;
+        public HomeController(ILogger<HomeController> logger, IGetText iGetTextService)
         {
             _logger = logger;
-            _hostingEnvironment = hostingEnvironment ?? throw new ArgumentNullException(nameof(hostingEnvironment));
+            _iGetTextService = iGetTextService;
         }
         public ActionResult Index(IFormFile files)
         {
@@ -48,12 +42,12 @@ namespace Royal.Insurance.Renual.UIApplication.Controllers
                 {
                     var myContent = JsonConvert.SerializeObject(inputData);
                     var stringContent = new StringContent(myContent, Encoding.UTF8, "application/json");
-                    var result = httpClient.PostAsync("https://localhost:44330/api/InsuranceRenual", stringContent).Result;
+                    var result = httpClient.PostAsync("https://localhost:44330/api/InsuranceRenual/RenualTextFiles/1", stringContent).Result;
                     objectResponce = result.Content.ReadAsAsync<List<OutPutDTO>>().Result;
                     foreach (var outdto in objectResponce)
                     {
                         outdto.FileName = outdto.CustomerId + "_" + outdto.FirstName;
-                        outdto.TextFile = Convert.ToBase64String(System.IO.File.ReadAllBytes(CreateText.GetStream(outdto, _hostingEnvironment)));
+                        outdto.TextFile = Convert.ToBase64String(System.IO.File.ReadAllBytes(_iGetTextService.GetStream(outdto)));
                     }
                 }
             }

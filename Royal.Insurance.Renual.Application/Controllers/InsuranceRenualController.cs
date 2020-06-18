@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Royal.Insurance.Renual.Application.Service;
 using Royal.Insurance.Renual.DTO;
-using RoyalLondon.Insurance.Application.Service;
 using System;
 using System.Collections.Generic;
 namespace Royal.Insurance.Renual.Application.Controllers
@@ -16,7 +15,8 @@ namespace Royal.Insurance.Renual.Application.Controllers
             _renualService = renualService;
         }
         [HttpPost]
-        public IActionResult RenualTextFiles(InputData stream)
+        [Route("RenualTextFiles/{userSelection}")]
+        public IActionResult RenualTextFiles(InputData stream,int userSelection)
         {
             if (stream.CsvFile == null)
             {
@@ -25,7 +25,7 @@ namespace Royal.Insurance.Renual.Application.Controllers
             var outPutResult = new List<OutPutDTO>();
             try
             {
-                outPutResult = _renualService.CustomerInsuranceGetAsync(stream);
+                outPutResult = _renualService.CustomerInsuranceGetAsync(stream, userSelection);
             }
             catch (Exception ex)
             {

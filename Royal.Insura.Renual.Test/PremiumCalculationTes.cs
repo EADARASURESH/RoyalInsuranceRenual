@@ -16,7 +16,7 @@ namespace Royal.Insurance.Renual.Test
             var inputDto = new List<InputDTO>() { new InputDTO() { AnnualPemium = 120 } };
             var outputDto = new List<OutPutDTO>();
             mockReviser.Setup(x => x.PremiumCalculationAmount(It.IsAny<List<InputDTO>>())).Returns(outputDto);
-            var premiumCalculationService = new PremiumCalculationService();
+            var premiumCalculationService = new PremiumCalculationByAnnualPremium();
             var result = premiumCalculationService.PremiumCalculationAmount(inputDto);
             Assert.AreEqual(10.5, result[0].InitialMonthlyPaymentAmount);
         }
@@ -27,7 +27,7 @@ namespace Royal.Insurance.Renual.Test
             var inputDto = new List<InputDTO>() { new InputDTO() { AnnualPemium = 120 } };
             var outputDto = new List<OutPutDTO>();
             mockReviser.Setup(x => x.PremiumCalculationAmount(It.IsAny<List<InputDTO>>())).Returns(outputDto);
-            var premiumCalculationService = new PremiumCalculationService();
+            var premiumCalculationService = new PremiumCalculationByAnnualPremium();
             var result = premiumCalculationService.PremiumCalculationAmount(inputDto);
             Assert.AreNotEqual(10, result[0].InitialMonthlyPaymentAmount);
         }
@@ -38,9 +38,9 @@ namespace Royal.Insurance.Renual.Test
             var inputDto = new List<InputDTO>() { new InputDTO() { AnnualPemium = 120 } };
             var outputDto = new List<OutPutDTO>();
             mockReviser.Setup(x => x.PremiumCalculationAmount(It.IsAny<List<InputDTO>>())).Returns(outputDto);
-            var premiumCalculationService = new PremiumCalculationService();
+            var premiumCalculationService = new PremiumCalculationByAnnualPremium();
             var result = premiumCalculationService.PremiumCalculationAmount(inputDto);
-            Assert.AreNotEqual(10.5, result[0].OtherMonthlyPaymentsAmount);
+            Assert.AreEqual(10.5, result[0].OtherMonthlyPaymentsAmount);
         }
         [Test]
         public void OtherMonth_Amount_Negative_calculation()
@@ -49,7 +49,7 @@ namespace Royal.Insurance.Renual.Test
             var inputDto = new List<InputDTO>() { new InputDTO() { AnnualPemium = 120 } };
             var outputDto = new List<OutPutDTO>();
             mockReviser.Setup(x => x.PremiumCalculationAmount(It.IsAny<List<InputDTO>>())).Returns(outputDto);
-            var premiumCalculationService = new PremiumCalculationService();
+            var premiumCalculationService = new PremiumCalculationByAnnualPremium();
             var result = premiumCalculationService.PremiumCalculationAmount(inputDto);
             Assert.AreNotEqual(10, result[0].InitialMonthlyPaymentAmount);
         }
@@ -60,7 +60,7 @@ namespace Royal.Insurance.Renual.Test
             var inputDto = new List<InputDTO>() { new InputDTO() { AnnualPemium = 0 } };
             var outputDto = new List<OutPutDTO>();
             mockReviser.Setup(x => x.PremiumCalculationAmount(It.IsAny<List<InputDTO>>())).Returns(outputDto);
-            var premiumCalculationService = new PremiumCalculationService();
+            var premiumCalculationService = new PremiumCalculationByAnnualPremium();
             var result = premiumCalculationService.PremiumCalculationAmount(inputDto);
             Assert.AreNotEqual(10, result[0].InitialMonthlyPaymentAmount);
         }
@@ -71,7 +71,7 @@ namespace Royal.Insurance.Renual.Test
             var inputDto = new List<InputDTO>() { new InputDTO() { Title = "Mr" } };
             var outputDto = new List<OutPutDTO>();
             mockReviser.Setup(x => x.PremiumCalculationAmount(It.IsAny<List<InputDTO>>())).Returns(outputDto);
-            var premiumCalculationService = new PremiumCalculationService();
+            var premiumCalculationService = new PremiumCalculationByAnnualPremium();
             var result = premiumCalculationService.PremiumCalculationAmount(inputDto);
             Assert.AreEqual(inputDto[0].Title, result[0].Title);
         }
@@ -82,7 +82,7 @@ namespace Royal.Insurance.Renual.Test
             var inputDto = new List<InputDTO>() { new InputDTO() { FirstName = "Shalin" } };
             var outputDto = new List<OutPutDTO>();
             mockReviser.Setup(x => x.PremiumCalculationAmount(It.IsAny<List<InputDTO>>())).Returns(outputDto);
-            var premiumCalculationService = new PremiumCalculationService();
+            var premiumCalculationService = new PremiumCalculationByAnnualPremium();
             var result = premiumCalculationService.PremiumCalculationAmount(inputDto);
             Assert.AreEqual(inputDto[0].FirstName, result[0].FirstName);
         }
@@ -93,7 +93,7 @@ namespace Royal.Insurance.Renual.Test
             var inputDto = new List<InputDTO>() { new InputDTO() { ProductName = "Nestlay" } };
             var outputDto = new List<OutPutDTO>();
             mockReviser.Setup(x => x.PremiumCalculationAmount(It.IsAny<List<InputDTO>>())).Returns(outputDto);
-            var premiumCalculationService = new PremiumCalculationService();
+            var premiumCalculationService = new PremiumCalculationByAnnualPremium();
             var result = premiumCalculationService.PremiumCalculationAmount(inputDto);
             Assert.AreEqual(inputDto[0].ProductName, result[0].ProductName);
         }
@@ -104,7 +104,7 @@ namespace Royal.Insurance.Renual.Test
             var inputDto = new List<InputDTO>() { new InputDTO() { Surname = "Mark" } };
             var outputDto = new List<OutPutDTO>();
             mockReviser.Setup(x => x.PremiumCalculationAmount(It.IsAny<List<InputDTO>>())).Returns(outputDto);
-            var premiumCalculationService = new PremiumCalculationService();
+            var premiumCalculationService = new PremiumCalculationByAnnualPremium();
             var result = premiumCalculationService.PremiumCalculationAmount(inputDto);
             Assert.AreEqual(inputDto[0].Surname, result[0].Surname);
         }
@@ -115,7 +115,7 @@ namespace Royal.Insurance.Renual.Test
             var inputDto = new List<InputDTO>() { new InputDTO() { PayOutAmount = 10.3 } };
             var outputDto = new List<OutPutDTO>();
             mockIserv.Setup(x => x.PremiumCalculationAmount(It.IsAny<List<InputDTO>>())).Returns(outputDto);
-            var premiumCalculationService = new PremiumCalculationService();
+            var premiumCalculationService = new PremiumCalculationByAnnualPremium();
             var result = premiumCalculationService.PremiumCalculationAmount(inputDto);
             Assert.AreEqual(inputDto[0].PayOutAmount, result[0].PayOutAmount);
         }

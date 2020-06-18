@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Royal.Insurance.Renual.Application.Service;
-using RoyalLondon.Insurance.Application.Service;
+
 namespace Royal.Insurance.Renual.Application
 {
     public class Startup
@@ -20,7 +20,14 @@ namespace Royal.Insurance.Renual.Application
         {
             services.AddControllers();
             services.AddSingleton<IService, CustomerInsuranceService>();
-            services.AddSingleton<IPremiumCalculation, PremiumCalculationService>();
+            services.AddSingleton<PremiumCalculation>();
+            services.AddSingleton<PremiumCalculationByAnnualPremium>()
+                .AddScoped<IPremiumCalculation, PremiumCalculationByAnnualPremium>(s => s.GetService<PremiumCalculationByAnnualPremium>());
+
+            services.AddSingleton<PremiumCalculation>()
+                .AddScoped<IPremiumCalculation, PremiumCalCulationByProductType>(s => s.GetService<PremiumCalCulationByProductType>());
+        
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
