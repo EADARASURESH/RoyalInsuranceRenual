@@ -44,3 +44,4 @@ C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplicati
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.pdb
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.genruntimeconfig.cache
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.UIApplication.csprojAssemblyReference.cache
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insurance.Renual.UIApplication\bin\Debug\netcoreapp3.1\CustomerText.txt

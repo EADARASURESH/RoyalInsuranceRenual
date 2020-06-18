@@ -14,7 +14,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
-
+	<ItemGroup Condition="'$(Configuration)' == 'Debug'">
+		<None Update="CustomerText.txt" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Royal.Insurance.Renual.DTO\Royal.Insurance.Renual.DTO.csproj" />
   </ItemGroup>
