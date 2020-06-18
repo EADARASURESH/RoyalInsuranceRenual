@@ -7,6 +7,6 @@ namespace Royal.Insurance.Renual.Application.Service
 {
     public interface IProductTypeInfo
     {
-        List<ProductTypeDiscount> GetProductTypeData(string inputString);
+        List<ProductTypeDiscount> GetProductTypeData();
     }
 }

@@ -9,23 +9,25 @@ namespace Royal.Insurance.Renual.Application.Service
     public class PremiumCalculation 
     {
         private readonly IServiceProvider _serviceProvider;
-        private readonly IConfiguration _configuration;
-        public PremiumCalculation(IServiceProvider serviceProvider,IConfiguration configuration)
+        public PremiumCalculation(IServiceProvider serviceProvider)
         {
             this._serviceProvider = serviceProvider;
-            _configuration = configuration;
         }
-        public IPremiumCalculation GetStreamService()
+        public IPremiumCalculation MapService(InputDTO inputDto)
         {
-            var getConfigValues = _configuration.GetValue<string>("ProductTypeDiscount:ProductsWiseDiscount");
-            if (!string.IsNullOrEmpty(getConfigValues))
+            string caseType = inputDto.ProductName;
+            switch (caseType)
             {
-                return (IPremiumCalculation)_serviceProvider.GetService(typeof(PremiumCalculationByProductType)); 
+                case "Standard Cover":
+                    return (IPremiumCalculation)_serviceProvider.GetService(typeof(StandardCover));
+                case "Enhanced Cover":
+                    return (IPremiumCalculation)_serviceProvider.GetService(typeof(EnhancedCover));
+                case "Special Cover":
+                    return (IPremiumCalculation)_serviceProvider.GetService(typeof(SpecialCover));
+                default:
+                    return (IPremiumCalculation)_serviceProvider.GetService(typeof(DefaultPremium));
             }
-            else
-            {
-                return (IPremiumCalculation)_serviceProvider.GetService(typeof(PremiumCalculationByAnnualPremium));
-            }
+            
         }
     }
 }

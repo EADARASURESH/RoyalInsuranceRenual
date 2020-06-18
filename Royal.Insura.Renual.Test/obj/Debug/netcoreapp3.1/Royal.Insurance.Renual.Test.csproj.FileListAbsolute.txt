@@ -1,3 +1,7 @@
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.Test.csprojAssemblyReference.cache
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.Test.AssemblyInfoInputs.cache
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.Test.AssemblyInfo.cs
+C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.Test.csproj.CoreCompileInputs.cache
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -110,10 +114,6 @@ C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\bin\Debug
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\bin\Debug\netcoreapp3.1\Royal.Insurance.Renual.DTO.dll
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\bin\Debug\netcoreapp3.1\Royal.Insurance.Renual.Application.pdb
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\bin\Debug\netcoreapp3.1\Royal.Insurance.Renual.DTO.pdb
-C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.Test.csprojAssemblyReference.cache
-C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.Test.AssemblyInfoInputs.cache
-C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.Test.AssemblyInfo.cs
-C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.Test.csproj.CoreCompileInputs.cache
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.Test.csproj.CopyComplete
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.Test.dll
 C:\Users\EdaraVM\Desktop\RoyalInsuranceRenual\Royal.Insura.Renual.Test\obj\Debug\netcoreapp3.1\Royal.Insurance.Renual.Test.pdb

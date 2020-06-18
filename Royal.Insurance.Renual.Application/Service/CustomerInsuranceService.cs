@@ -26,7 +26,7 @@ namespace Royal.Insurance.Renual.Application.Service
             }
             var stream = new MemoryStream(file.CsvFile);
             IFormFile files = new FormFile(stream, 0, Constant.Size, Constant.Name, Constant.Filename);
-            List<OutPutDTO> outPutDtOs;
+            var outPutDtOs=new List<OutPutDTO>();
             string filepath = ReadFile.GetFileName(files).Result;
             try
             {
@@ -34,7 +34,11 @@ namespace Royal.Insurance.Renual.Application.Service
                 using var csvReader = new CsvReader(reader, CultureInfo.CurrentCulture);
                 csvReader.Configuration.RegisterClassMap<MapObject>();
                 var inputDtOs = csvReader.GetRecords<InputDTO>().ToList();
-                outPutDtOs = _premiumCalculation.GetStreamService().PremiumCalculationAmount(inputDtOs);
+                foreach (var inPutDto in inputDtOs)
+                {
+                    OutPutDTO outPutDtO = _premiumCalculation.MapService(inPutDto).PremiumCalculationAmount(inPutDto);
+                    outPutDtOs.Add(outPutDtO);
+                }
             }
             catch (UnauthorizedAccessException e)
             {

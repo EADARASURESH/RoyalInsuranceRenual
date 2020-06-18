@@ -22,13 +22,14 @@ namespace Royal.Insurance.Renual.Application
             services.AddSingleton<IProductTypeInfo, ProductTypeInfo>();
             services.AddSingleton<IService, CustomerInsuranceService>();
             services.AddSingleton<PremiumCalculation>();
-            services.AddSingleton<PremiumCalculationByAnnualPremium>()
-                .AddScoped<IPremiumCalculation, PremiumCalculationByAnnualPremium>(s => s.GetService<PremiumCalculationByAnnualPremium>());
-
-            services.AddSingleton<PremiumCalculationByProductType>()
-                .AddScoped<IPremiumCalculation, PremiumCalculationByProductType>(s => s.GetService<PremiumCalculationByProductType>());
-        
-
+            services.AddSingleton<DefaultPremium>()
+                .AddSingleton<IPremiumCalculation, DefaultPremium>(s => s.GetService<DefaultPremium>());
+            services.AddSingleton<ICommonProductType, CommonProductType>();
+            services.AddSingleton<StandardCover>()
+                .AddScoped<IPremiumCalculation, StandardCover>(s => s.GetService<StandardCover>());
+            services.AddSingleton<SpecialCover>()
+                .AddScoped<IPremiumCalculation, SpecialCover>(s => s.GetService<SpecialCover>());
+            services.AddSingleton<EnhancedCover>().AddScoped<IPremiumCalculation, EnhancedCover>(s => s.GetService<EnhancedCover>());
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
