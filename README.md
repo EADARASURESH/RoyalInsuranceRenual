@@ -34,10 +34,10 @@ Serice Layes(Royal.Insurance.Renual.Application(WebAPi APPlication)
 -----------------
 1.Dependency Injection Design Pattern:- using Constructor injection design pattern
 2.Sigleton Design Pattern :- for exception tracking 
-
+3.Factory pattern Design Pattern
 Solid Principles
 ----------------
-1. Interface Segregation Principle
+1.Interface Segregation Principle
 2.Single Responsibility Principle (SRP)
 
 Unit Test Cases
