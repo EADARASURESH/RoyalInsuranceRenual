@@ -26,21 +26,21 @@ namespace Royal.Insurance.Renual.UIApplication.Models
             string myTempFilePath = string.Empty;
             if (_hostingEnvironment != null)
             {
-                var objpath = _hostingEnvironment.ContentRootPath + "\\CustomerText.txt";
+                var objpath = _hostingEnvironment.ContentRootPath + Constant.FileTypeName;
                 string text = File.ReadAllText(objpath);
                 StringBuilder sb = new StringBuilder();
                 sb.Append(text);
-                sb.Replace("$CurrentDate", DateTime.Now.Date.ToString("dd/MM/yyyy"));
-                sb.Replace("$FULLNAME", outPutDto.Title + " " + outPutDto.FirstName);
-                sb.Replace("$WITHSURNAME", outPutDto.Title + " " + outPutDto.FirstName + " " + outPutDto.Surname);
-                sb.Replace("$PRODUCTNAME", outPutDto.ProductName);
-                sb.Replace("$PATOUTAMOUNT", "£" + outPutDto.PayOutAmount.ToString(CultureInfo.InvariantCulture));
-                sb.Replace("$ANNUALPREMIUM", "£" + outPutDto.AnnualPemium.ToString(CultureInfo.InvariantCulture));
-                sb.Replace("$CREDITCHARGE", "£" + outPutDto.CreditCharge.ToString(CultureInfo.InvariantCulture));
-                sb.Replace("$TOTALPREMIUM", "£" + outPutDto.TotalPremium.ToString(CultureInfo.InvariantCulture));
-                sb.Replace("$INITIALMONTHPREMIUM", "£" + outPutDto.InitialMonthlyPaymentAmount.ToString(CultureInfo.InvariantCulture));
-                sb.Replace("$OTHERMONTHPREMIUM", "£" + outPutDto.OtherMonthlyPaymentsAmount.ToString(CultureInfo.InvariantCulture));
-                myTempFilePath = Path.Combine(Path.GetTempPath(), outPutDto.CustomerId + "_" + outPutDto.FirstName + ".txt");
+                sb.Replace(Constant.CurrentDate, DateTime.Now.Date.ToString(Constant.DateFormat));
+                sb.Replace(Constant.FullName, outPutDto.Title + " " + outPutDto.FirstName);
+                sb.Replace(Constant.WitthSurName, outPutDto.Title + " " + outPutDto.FirstName + " " + outPutDto.Surname);
+                sb.Replace(Constant.PoductName, outPutDto.ProductName);
+                sb.Replace(Constant.PayOutAmount, Constant.Pound + outPutDto.PayOutAmount.ToString(CultureInfo.InvariantCulture));
+                sb.Replace(Constant.AnnualPremiumCharge, Constant.Pound + outPutDto.AnnualPemium.ToString(CultureInfo.InvariantCulture));
+                sb.Replace(Constant.CreditCharge, Constant.Pound + outPutDto.CreditCharge.ToString(CultureInfo.InvariantCulture));
+                sb.Replace(Constant.TotalPremium, Constant.Pound + outPutDto.TotalPremium.ToString(CultureInfo.InvariantCulture));
+                sb.Replace(Constant.InitilaMonthPremium, Constant.Pound + outPutDto.InitialMonthlyPaymentAmount.ToString(CultureInfo.InvariantCulture));
+                sb.Replace(Constant.OtherMonthPremium, Constant.Pound + outPutDto.OtherMonthlyPaymentsAmount.ToString(CultureInfo.InvariantCulture));
+                myTempFilePath = Path.Combine(Path.GetTempPath(), outPutDto.CustomerId + "_" + outPutDto.FirstName + Constant.Extention);
                 using StreamWriter sw = new StreamWriter(myTempFilePath);
                 sw.WriteLine(sb);
                

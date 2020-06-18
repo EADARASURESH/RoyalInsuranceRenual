@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Royal.Insurance.Renual.DTO;
@@ -10,16 +10,20 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Text;
+
 namespace Royal.Insurance.Renual.UIApplication.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IGetText _iGetTextService;
-        public HomeController(ILogger<HomeController> logger, IGetText iGetTextService)
+
+        private readonly IConfiguration _configuration;
+        public HomeController(ILogger<HomeController> logger, IGetText iGetTextService, IConfiguration configuration)
         {
             _logger = logger;
             _iGetTextService = iGetTextService;
+            _configuration = configuration;
         }
         public ActionResult Index(IFormFile files)
         {
@@ -41,8 +45,8 @@ namespace Royal.Insurance.Renual.UIApplication.Controllers
                 using (var httpClient = new HttpClient())
                 {
                     var myContent = JsonConvert.SerializeObject(inputData);
-                    var stringContent = new StringContent(myContent, Encoding.UTF8, "application/json");
-                    var result = httpClient.PostAsync("https://localhost:44330/api/InsuranceRenual/RenualTextFiles/1", stringContent).Result;
+                    var stringContent = new StringContent(myContent, Encoding.UTF8, Constant.ContentType);
+                    var result = httpClient.PostAsync(_configuration.GetValue<string>(Constant.BaseUrl), stringContent).Result;
                     objectResponce = result.Content.ReadAsAsync<List<OutPutDTO>>().Result;
                     foreach (var outdto in objectResponce)
                     {

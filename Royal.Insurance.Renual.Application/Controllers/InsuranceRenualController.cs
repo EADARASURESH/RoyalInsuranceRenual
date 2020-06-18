@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 namespace Royal.Insurance.Renual.Application.Controllers
 {
-    [Route("api/[controller]")]
+    [Route(Constant.ApiVersion)]
     [ApiController]
     public class InsuranceRenualController : ControllerBase
     {
@@ -15,7 +15,7 @@ namespace Royal.Insurance.Renual.Application.Controllers
             _renualService = renualService;
         }
         [HttpPost]
-        [Route("RenualTextFiles/{userSelection}")]
+        [Route(Constant.UrlRoute)]
         public IActionResult RenualTextFiles(InputData stream,int userSelection)
         {
             if (stream.CsvFile == null)

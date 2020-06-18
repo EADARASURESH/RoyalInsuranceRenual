@@ -24,7 +24,7 @@ namespace Royal.Insurance.Renual.Application.Service
                 throw new ArgumentNullException();
             }
             var stream = new MemoryStream(file.CsvFile);
-            IFormFile files = new FormFile(stream, 0, 100000000, "name", "fileName");
+            IFormFile files = new FormFile(stream, 0, Constant.Size, Constant.Name, Constant.Filename);
             List<OutPutDTO> outPutDtOs;
             string filepath = ReadFile.GetFileName(files).Result;
             try

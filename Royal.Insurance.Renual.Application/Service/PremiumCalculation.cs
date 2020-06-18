@@ -11,7 +11,7 @@ namespace Royal.Insurance.Renual.Application.Service
         {
             this._serviceProvider = serviceProvider;
         }
-        public IPremiumCalculation GetStreamService(int userSelection,List<InputDTO> _inputDtOs)
+        public IPremiumCalculation GetStreamService(int userSelection,List<InputDTO> inputDtOs)
         {
             if (userSelection == 1)
             {

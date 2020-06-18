@@ -19,6 +19,7 @@
                     contentType: false,
                     type: "POST",
                     success: function (data) {
+                        alert("Do you want down load all files?");
                         $.each(data, function (i, item) {
                             debugger;
                             const byteCharacters = atob(item.textFile);
@@ -34,7 +35,7 @@
                             link.click();
                         });
                     },
-                    error: function (ex) {
+                    error: function () {
                         var r = jQuery.parseJSON(response.responseText);
                         alert("Message: " + r.Message);
                     }

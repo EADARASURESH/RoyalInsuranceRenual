@@ -6,11 +6,11 @@ namespace Royal.Insurance.Renual.Application.Service
 {
     public class PremiumCalculationByAnnualPremium : IPremiumCalculation
     {
-        public List<OutPutDTO> PremiumCalculationAmount(List<InputDTO> _inputDtOs)
+        public List<OutPutDTO> PremiumCalculationAmount(List<InputDTO> inputDtOs)
         {
 
             var outPutDtOs = new List<OutPutDTO>();
-            foreach (var inputDto in _inputDtOs)
+            foreach (var inputDto in inputDtOs)
             {
                 var outPutDto = new OutPutDTO();
                 outPutDto.CreditCharge = (5 * inputDto.AnnualPemium) / 100;
