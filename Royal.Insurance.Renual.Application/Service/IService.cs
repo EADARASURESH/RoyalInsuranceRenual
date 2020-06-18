@@ -5,6 +5,6 @@ namespace Royal.Insurance.Renual.Application.Service
 {
     public interface IService
     {
-        List<OutPutDTO> CustomerInsuranceGetAsync(InputData file,int userSelection);
+        List<OutPutDTO> CustomerInsuranceGetAsync(InputData file);
     }
 }

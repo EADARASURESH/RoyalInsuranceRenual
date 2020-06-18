@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using CsvHelper;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Royal.Insurance.Renual.DTO;
 
 namespace Royal.Insurance.Renual.Application.Service
@@ -13,11 +14,11 @@ namespace Royal.Insurance.Renual.Application.Service
     public class CustomerInsuranceService : IService
     {
         private readonly PremiumCalculation _premiumCalculation;
-        public CustomerInsuranceService(PremiumCalculation premiumCalculation)
+        public CustomerInsuranceService(PremiumCalculation premiumCalculation, IConfiguration configuration, IProductTypeInfo productTypeInfo)
         {
             _premiumCalculation = premiumCalculation;
         }
-        public List<OutPutDTO> CustomerInsuranceGetAsync(InputData file,int userSelection)
+        public List<OutPutDTO> CustomerInsuranceGetAsync(InputData file)
         {
             if (file.CsvFile == null)
             {
@@ -33,7 +34,7 @@ namespace Royal.Insurance.Renual.Application.Service
                 using var csvReader = new CsvReader(reader, CultureInfo.CurrentCulture);
                 csvReader.Configuration.RegisterClassMap<MapObject>();
                 var inputDtOs = csvReader.GetRecords<InputDTO>().ToList();
-                outPutDtOs = _premiumCalculation.GetStreamService(userSelection, inputDtOs).PremiumCalculationAmount(inputDtOs);
+                outPutDtOs = _premiumCalculation.GetStreamService().PremiumCalculationAmount(inputDtOs);
             }
             catch (UnauthorizedAccessException e)
             {

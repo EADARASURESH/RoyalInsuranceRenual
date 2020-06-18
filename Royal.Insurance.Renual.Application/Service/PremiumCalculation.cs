@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
+using Microsoft.Extensions.Configuration;
 using Royal.Insurance.Renual.DTO;
 
 namespace Royal.Insurance.Renual.Application.Service
@@ -7,21 +9,23 @@ namespace Royal.Insurance.Renual.Application.Service
     public class PremiumCalculation 
     {
         private readonly IServiceProvider _serviceProvider;
-        public PremiumCalculation(IServiceProvider serviceProvider)
+        private readonly IConfiguration _configuration;
+        public PremiumCalculation(IServiceProvider serviceProvider,IConfiguration configuration)
         {
             this._serviceProvider = serviceProvider;
+            _configuration = configuration;
         }
-        public IPremiumCalculation GetStreamService(int userSelection,List<InputDTO> inputDtOs)
+        public IPremiumCalculation GetStreamService()
         {
-            if (userSelection == 1)
+            var getConfigValues = _configuration.GetValue<string>("ProductTypeDiscount:ProductsWiseDiscount");
+            if (!string.IsNullOrEmpty(getConfigValues))
             {
-                return (IPremiumCalculation) _serviceProvider.GetService(typeof(PremiumCalculationByAnnualPremium));
+                return (IPremiumCalculation)_serviceProvider.GetService(typeof(PremiumCalculationByProductType)); 
             }
             else
             {
-                return (IPremiumCalculation)_serviceProvider.GetService(typeof(PremiumCalCulationByProductType));
+                return (IPremiumCalculation)_serviceProvider.GetService(typeof(PremiumCalculationByAnnualPremium));
             }
-           
         }
     }
 }

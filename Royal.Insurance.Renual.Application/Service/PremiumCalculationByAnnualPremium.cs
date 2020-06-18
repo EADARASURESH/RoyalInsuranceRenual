@@ -8,7 +8,6 @@ namespace Royal.Insurance.Renual.Application.Service
     {
         public List<OutPutDTO> PremiumCalculationAmount(List<InputDTO> inputDtOs)
         {
-
             var outPutDtOs = new List<OutPutDTO>();
             foreach (var inputDto in inputDtOs)
             {

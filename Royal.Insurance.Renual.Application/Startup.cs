@@ -19,13 +19,14 @@ namespace Royal.Insurance.Renual.Application
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<IProductTypeInfo, ProductTypeInfo>();
             services.AddSingleton<IService, CustomerInsuranceService>();
             services.AddSingleton<PremiumCalculation>();
             services.AddSingleton<PremiumCalculationByAnnualPremium>()
                 .AddScoped<IPremiumCalculation, PremiumCalculationByAnnualPremium>(s => s.GetService<PremiumCalculationByAnnualPremium>());
 
-            services.AddSingleton<PremiumCalculation>()
-                .AddScoped<IPremiumCalculation, PremiumCalCulationByProductType>(s => s.GetService<PremiumCalCulationByProductType>());
+            services.AddSingleton<PremiumCalculationByProductType>()
+                .AddScoped<IPremiumCalculation, PremiumCalculationByProductType>(s => s.GetService<PremiumCalculationByProductType>());
         
 
             services.AddSwaggerGen(c =>

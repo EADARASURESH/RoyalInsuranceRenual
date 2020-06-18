@@ -16,9 +16,9 @@ namespace Royal.Insurance.Renual.Test
             var outPutDots = new List<OutPutDTO>();
             OutPutDTO outPutDto = new OutPutDTO { AnnualPemium = 1.13 };
             InputData inputData = new InputData { CsvFile = null };
-            mockIserv.Setup(x => x.CustomerInsuranceGetAsync(It.IsAny<InputData>(),It.IsAny<int>())).Returns(outPutDots);
+            mockIserv.Setup(x => x.CustomerInsuranceGetAsync(It.IsAny<InputData>())).Returns(outPutDots);
             var inputService = new InsuranceRenualController(mockIserv.Object);
-            var sample = inputService.RenualTextFiles(inputData,1);
+            var sample = inputService.RenualTextFiles(inputData);
             var statuscode = ((Microsoft.AspNetCore.Mvc.StatusCodeResult)sample).StatusCode;
             Assert.AreNotEqual(200, statuscode);
         }
@@ -29,9 +29,9 @@ namespace Royal.Insurance.Renual.Test
             var outPutDto = new List<OutPutDTO>();
             OutPutDTO outPutDTO = new OutPutDTO { AnnualPemium = 1.13 };
             InputData inputData = new InputData();
-            mockIserv.Setup(x => x.CustomerInsuranceGetAsync(It.IsAny<InputData>(),It.IsAny<int>())).Returns(outPutDto);
+            mockIserv.Setup(x => x.CustomerInsuranceGetAsync(It.IsAny<InputData>())).Returns(outPutDto);
             var inputService = new InsuranceRenualController(mockIserv.Object);
-            var sample = inputService.RenualTextFiles(inputData,1);
+            var sample = inputService.RenualTextFiles(inputData);
             var statuscode = ((Microsoft.AspNetCore.Mvc.StatusCodeResult)sample).StatusCode;
             Assert.AreNotEqual(200, statuscode);
         }
@@ -42,9 +42,9 @@ namespace Royal.Insurance.Renual.Test
             var outPutDto = new List<OutPutDTO>();
             InputData inputData = new InputData();
             inputData.CsvFile = null;
-            mockIserv.Setup(x => x.CustomerInsuranceGetAsync(It.IsAny<InputData>(), It.IsAny<int>())).Returns(outPutDto);
+            mockIserv.Setup(x => x.CustomerInsuranceGetAsync(It.IsAny<InputData>())).Returns(outPutDto);
             var inputService = new InsuranceRenualController(mockIserv.Object);
-            var sample = inputService.RenualTextFiles(inputData,1);
+            var sample = inputService.RenualTextFiles(inputData);
             var statuscode = ((Microsoft.AspNetCore.Mvc.StatusCodeResult)sample).StatusCode;
             Assert.AreNotEqual(200, statuscode);
         }

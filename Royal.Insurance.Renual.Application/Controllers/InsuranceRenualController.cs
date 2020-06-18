@@ -15,8 +15,7 @@ namespace Royal.Insurance.Renual.Application.Controllers
             _renualService = renualService;
         }
         [HttpPost]
-        [Route(Constant.UrlRoute)]
-        public IActionResult RenualTextFiles(InputData stream,int userSelection)
+        public IActionResult RenualTextFiles(InputData stream)
         {
             if (stream.CsvFile == null)
             {
@@ -25,7 +24,7 @@ namespace Royal.Insurance.Renual.Application.Controllers
             var outPutResult = new List<OutPutDTO>();
             try
             {
-                outPutResult = _renualService.CustomerInsuranceGetAsync(stream, userSelection);
+                outPutResult = _renualService.CustomerInsuranceGetAsync(stream);
             }
             catch (Exception ex)
             {
