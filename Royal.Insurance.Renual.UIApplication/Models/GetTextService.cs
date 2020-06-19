@@ -35,9 +35,9 @@ namespace Royal.Insurance.Renual.UIApplication.Models
                 sb.Replace(Constant.WitthSurName, outPutDto.Title + " " + outPutDto.FirstName + " " + outPutDto.Surname);
                 sb.Replace(Constant.PoductName, outPutDto.ProductName);
                 sb.Replace(Constant.PayOutAmount, Constant.Pound + outPutDto.PayOutAmount.ToString(CultureInfo.InvariantCulture));
-                sb.Replace(Constant.AnnualPremiumCharge, Constant.Pound + outPutDto.AnnualPemium.ToString(CultureInfo.InvariantCulture));
-                sb.Replace(Constant.CreditCharge, Constant.Pound + outPutDto.CreditCharge.ToString(CultureInfo.InvariantCulture));
-                sb.Replace(Constant.TotalPremium, Constant.Pound + outPutDto.TotalPremium.ToString(CultureInfo.InvariantCulture));
+                sb.Replace(Constant.AnnualPremiumCharge, Constant.Pound + Math.Round(outPutDto.AnnualPemium,2).ToString());
+                sb.Replace(Constant.CreditCharge, Constant.Pound + Math.Round(outPutDto.CreditCharge,2).ToString());
+                sb.Replace(Constant.TotalPremium, Constant.Pound +Math.Round(outPutDto.TotalPremium,2).ToString());
                 sb.Replace(Constant.InitilaMonthPremium, Constant.Pound + outPutDto.InitialMonthlyPaymentAmount.ToString(CultureInfo.InvariantCulture));
                 sb.Replace(Constant.OtherMonthPremium, Constant.Pound + outPutDto.OtherMonthlyPaymentsAmount.ToString(CultureInfo.InvariantCulture));
                 myTempFilePath = Path.Combine(Path.GetTempPath(), outPutDto.CustomerId + "_" + outPutDto.FirstName + Constant.Extention);
