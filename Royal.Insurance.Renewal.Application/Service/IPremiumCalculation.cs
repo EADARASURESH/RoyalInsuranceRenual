@@ -4,6 +4,6 @@ namespace Royal.Insurance.Renewal.Application.Service
 {
     public interface IPremiumCalculation
     {
-        OutPutDTO PremiumCalculationAmount(InputDTO inputDtOs);
+        OutPutDTO PremiumCalculationAmount(InputDTO inputDtos);
     }
 }

@@ -7,7 +7,7 @@ namespace Royal.Insurance.Renewal.Application.Service
 {
     public abstract class CommonImplimentation
     {
-        public virtual OutPutDTO PremiumCalculationAmount(InputDTO inputDto)
+        public virtual OutPutDTO GetPremiumResult(InputDTO inputDto)
         {
             var outPutDto = new OutPutDTO();
             try
@@ -29,26 +29,26 @@ namespace Royal.Insurance.Renewal.Application.Service
             return getDiscount;
         }
 
-        public OutPutDTO MapObject(InputDTO inputDTO)
+        public OutPutDTO MapObject(InputDTO inputDto)
         {
-            OutPutDTO outPutDTO = new OutPutDTO();
-            outPutDTO.CustomerId = inputDTO.CustomerId;
-            outPutDTO.Title = inputDTO.Title;
-            outPutDTO.Surname = inputDTO.Surname;
-            outPutDTO.FirstName = inputDTO.FirstName;
-            outPutDTO.ProductName = inputDTO.ProductName;
-            outPutDTO.PayOutAmount = inputDTO.PayOutAmount;
-            outPutDTO.AnnualPemium = inputDTO.AnnualPemium; ;
-            outPutDTO.CreditCharge = (5 * outPutDTO.AnnualPemium) / 100;
-            outPutDTO.TotalPremium = outPutDTO.AnnualPemium + outPutDTO.CreditCharge;
-            double divideAverageAmount = outPutDTO.TotalPremium / 12;
+            OutPutDTO outPutDto = new OutPutDTO();
+            outPutDto.CustomerId = inputDto.CustomerId;
+            outPutDto.Title = inputDto.Title;
+            outPutDto.Surname = inputDto.Surname;
+            outPutDto.FirstName = inputDto.FirstName;
+            outPutDto.ProductName = inputDto.ProductName;
+            outPutDto.PayOutAmount = inputDto.PayOutAmount;
+            outPutDto.AnnualPemium = inputDto.AnnualPemium; ;
+            outPutDto.CreditCharge = (5 * outPutDto.AnnualPemium) / 100;
+            outPutDto.TotalPremium = outPutDto.AnnualPemium + outPutDto.CreditCharge;
+            double divideAverageAmount = outPutDto.TotalPremium / 12;
             double monthlyAmount = Math.Round(divideAverageAmount, 2);
             double monthlyAmountExcess = Math.Round(divideAverageAmount, 10);
             double exceedAmount = Math.Round((monthlyAmountExcess - monthlyAmount) * 12, 2);
-            outPutDTO.InitialMonthlyPaymentAmount = monthlyAmount + exceedAmount;
-            outPutDTO.OtherMonthlyPaymentsAmount = monthlyAmount;
+            outPutDto.InitialMonthlyPaymentAmount = monthlyAmount + exceedAmount;
+            outPutDto.OtherMonthlyPaymentsAmount = monthlyAmount;
 
-            return outPutDTO;
+            return outPutDto;
         }
 
     }

@@ -5,13 +5,14 @@ namespace Royal.Insurance.Renewal.Application.Service
 {
     public class DefaultPremium : CommonImplimentation, IPremiumCalculation
     {
-        public override OutPutDTO PremiumCalculationAmount(InputDTO inputDtOs)
+        public OutPutDTO PremiumCalculationAmount(InputDTO inputDtOs)
         {
             var outPutDto = new OutPutDTO();
-            outPutDto = MapObject(inputDtOs);
+            outPutDto = GetPremiumResult(inputDtOs);
 
             return outPutDto;
         }
+        
 
     }
 }

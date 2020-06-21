@@ -34,8 +34,8 @@ namespace Royal.Insurance.Renewal.Application.Service
                 using var reader = new StreamReader(filepath, Encoding.Default);
                 using var csvReader = new CsvReader(reader, CultureInfo.CurrentCulture);
                 csvReader.Configuration.RegisterClassMap<MapObject>();
-                var inputDtOs = csvReader.GetRecords<InputDTO>().ToList();
-                foreach (var inPutDto in inputDtOs)
+                var inputDtos = csvReader.GetRecords<InputDTO>().ToList();
+                foreach (var inPutDto in inputDtos)
                 {
                     OutPutDTO outPutDtO = _mappingService.MapService(inPutDto.ProductName).PremiumCalculationAmount(inPutDto);
                     outPutDtOs.Add(outPutDtO);

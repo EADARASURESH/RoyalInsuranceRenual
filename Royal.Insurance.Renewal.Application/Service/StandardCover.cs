@@ -14,24 +14,36 @@ namespace Royal.Insurance.Renewal.Application.Service
 
         }
 
-        public override OutPutDTO PremiumCalculationAmount(InputDTO inputDtOs)
+        public override OutPutDTO GetPremiumResult(InputDTO inputDtos)
         {
             var outPutDto = new OutPutDTO();
-            var getDiscount = GetConfigProductInfo(_productTypeDiscounts, inputDtOs.ProductName);
-            if (inputDtOs.PayOutAmount > 65000)
+            var getDiscount = GetConfigProductInfo(_productTypeDiscounts, inputDtos.ProductName);
+            if (inputDtos.PayOutAmount > 6500000)
             {
                 if (getDiscount > 0)
                 {
-                    var anualPremium = (getDiscount * inputDtOs.AnnualPemium) / 100;
-                    inputDtOs.AnnualPemium = inputDtOs.AnnualPemium - anualPremium;
+                    var anualPremium = (getDiscount * inputDtos.AnnualPemium) / 100;
+                    inputDtos.AnnualPemium = inputDtos.AnnualPemium - anualPremium;
                 }
                 else
                 {
-                    var anualPremium = (20 * inputDtOs.AnnualPemium) / 100;
-                    inputDtOs.AnnualPemium = inputDtOs.AnnualPemium - anualPremium;
+                    var anualPremium = (20 * inputDtos.AnnualPemium) / 100;
+                    inputDtos.AnnualPemium = inputDtos.AnnualPemium - anualPremium;
                 }
             }
-            outPutDto = MapObject(inputDtOs);
+            outPutDto = MapObject(inputDtos);
+
+            return outPutDto;
+        }
+        public OutPutDTO PremiumCalculationAmount(InputDTO inputDto)
+        {
+            if (inputDto.PayOutAmount >= 6500000)
+            {
+                throw new System.Exception("Premium value should not exceed 6500000 " + inputDto.CustomerId);
+            }
+
+            var outPutDto = new OutPutDTO();
+            outPutDto = GetPremiumResult(inputDto);
 
             return outPutDto;
         }
