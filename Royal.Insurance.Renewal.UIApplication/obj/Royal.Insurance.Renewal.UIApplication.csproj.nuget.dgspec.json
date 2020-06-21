@@ -1,0 +1,234 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.UIApplication\\Royal.Insurance.Renewal.UIApplication.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.Application\\Royal.Insurance.Renewal.Application.csproj": {
+      "version": "1.0.1",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.Application\\Royal.Insurance.Renewal.Application.csproj",
+        "projectName": "Royal.Insurance.Renewal.Application",
+        "projectPath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.Application\\Royal.Insurance.Renewal.Application.csproj",
+        "packagesPath": "C:\\Users\\EdaraVM\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\EdaraVM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.DTO\\Royal.Insurance.Renewal.DTO.csproj": {
+                "projectPath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.DTO\\Royal.Insurance.Renewal.DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[15.0.5, )"
+            },
+            "JetBrains.ReSharper.CommandLineTools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2020.2.0-eap02, )"
+            },
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.Recognizers.Text": {
+              "target": "Package",
+              "version": "[1.3.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.DTO\\Royal.Insurance.Renewal.DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.DTO\\Royal.Insurance.Renewal.DTO.csproj",
+        "projectName": "Royal.Insurance.Renewal.DTO",
+        "projectPath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.DTO\\Royal.Insurance.Renewal.DTO.csproj",
+        "packagesPath": "C:\\Users\\EdaraVM\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\EdaraVM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[15.0.5, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.UIApplication\\Royal.Insurance.Renewal.UIApplication.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.UIApplication\\Royal.Insurance.Renewal.UIApplication.csproj",
+        "projectName": "Royal.Insurance.Renewal.UIApplication",
+        "projectPath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.UIApplication\\Royal.Insurance.Renewal.UIApplication.csproj",
+        "packagesPath": "C:\\Users\\EdaraVM\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.UIApplication\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\EdaraVM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.Application\\Royal.Insurance.Renewal.Application.csproj": {
+                "projectPath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.Application\\Royal.Insurance.Renewal.Application.csproj"
+              },
+              "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.DTO\\Royal.Insurance.Renewal.DTO.csproj": {
+                "projectPath": "C:\\Users\\EdaraVM\\Desktop\\RoyalInsuranceRenual\\Royal.Insurance.Renewal.DTO\\Royal.Insurance.Renewal.DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "jQuery.jqGrid": {
+              "target": "Package",
+              "version": "[4.4.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

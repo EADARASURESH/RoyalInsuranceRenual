@@ -1,0 +1,1 @@
+﻿namespace Royal.Insurance.Renewal.DTO{    public class InputData    {        public string Name { get; set; }        public byte[] CsvFile { get; set; }    }}

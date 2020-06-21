@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\HomeController.cs~RF8db3f38.TMP" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="jQuery.jqGrid" Version="4.4.4" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+	<ItemGroup Condition="'$(Configuration)' == 'Debug'">
+		<None Update="CustomerText.txt" CopyToOutputDirectory="PreserveNewest" />
+	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Royal.Insurance.Renewal.Application\Royal.Insurance.Renewal.Application.csproj" />
+    <ProjectReference Include="..\Royal.Insurance.Renewal.DTO\Royal.Insurance.Renewal.DTO.csproj" />
+    <ProjectReference Include="..\Royal.Insurance.Renewal.DTO\Royal.Insurance.Renewal.DTO.csproj" />
+    <ProjectReference Include="..\Royal.Insurance.Renewal.DTO\Royal.Insurance.Renewal.DTO.csproj" />
+  </ItemGroup>
+
+</Project>
