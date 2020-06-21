@@ -6,13 +6,13 @@ using Royal.Insurance.Renewal.DTO;
 
 namespace Royal.Insurance.Renewal.Test
 {
-    public class EnhancedCoveTest
+    public class EnhancedCoverTest
     {
         Mock<ICommonProductType> mockReviser = new Mock<ICommonProductType>();
         Mock<IConfiguration> configuration = new Mock<IConfiguration>();
         Mock<IProductTypeInfo> productTypeInfo = new Mock<IProductTypeInfo>();
         OutPutDTO outPutDto = new OutPutDTO();
-        public EnhancedCoveTest()
+        public EnhancedCoverTest()
         {
             productTypeInfo.Setup(x => x.GetProductTypeData());
             mockReviser.Setup(x => x.PremiumCalculationAmount(It.IsAny<InputDTO>())).Returns(outPutDto);
