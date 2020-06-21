@@ -22,6 +22,7 @@ namespace Royal.Insurance.Renewal.Test
             var statuscode = ((Microsoft.AspNetCore.Mvc.StatusCodeResult)sample).StatusCode;
             Assert.AreNotEqual(200, statuscode);
         }
+
         [Test]
         public void ByteLength_Positive_Negative_Check()
         {
@@ -35,6 +36,7 @@ namespace Royal.Insurance.Renewal.Test
             var statuscode = ((Microsoft.AspNetCore.Mvc.StatusCodeResult)sample).StatusCode;
             Assert.AreNotEqual(200, statuscode);
         }
+
         [Test]
         public void ByteLength_Null_Check()
         {
