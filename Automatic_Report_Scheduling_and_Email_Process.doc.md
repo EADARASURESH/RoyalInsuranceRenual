@@ -2,6 +2,11 @@
 
 ---
 
+
+![Untitled Diagram-Page-1](https://github.com/user-attachments/assets/e8c1dc61-7dba-438d-af43-c9ae1ff27d02)
+
+
+
 ## Step 1: Trigger Stored Procedure Execution (AWS Lambda Scheduler)
 
 **1. Use AWS EventBridge (CloudWatch Events) to schedule a Lambda function.**
